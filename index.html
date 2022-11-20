@@ -5,25 +5,30 @@
     <title>Read / See File</title>
 </head>
 <body>
+<div id="upload-container">
+    <form  id="form1">
+        <input type="file" id="uploaded-file">
+        <button type="submit">Upload</button>
+    </form>
 
+</div>
 
-
-
-<table>
+<div id="file-data">
+<table id="table1">
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Phone Number</th>
     </tr>
     </thead>
-    <tbody>
-    
+    <tbody id="file-upload-tbody">
+
     </tbody>
 </table>
-
-
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+<script src="./readFile.js"></script>
 </body>
 </html>
