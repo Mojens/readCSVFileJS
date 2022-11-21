@@ -8,7 +8,7 @@ function sanitizeStringWithTableRows(tableRows) {
 }
 
 function csvFileToArray(str, delimiter = ";") {
-    const headers = str.slice(0, str.indexOf("\n") - 1).split(delimiter);
+    const headers = str.slice(0, str.indexOf("\n")).split(delimiter);
     const rows = str.slice(str.indexOf("\n") + 1).split("\n");
     return rows.map(function (row) {
         const values = row.split(delimiter);
@@ -37,6 +37,7 @@ function readFile(evt) {
     fileReader.onload = function (evt) {
         const plainText = evt.target.result;
         const arrayOfObj = csvFileToArray(plainText);
+        console.log(arrayOfObj)
         document.getElementById("file-upload-tbody").innerHTML = sanitizeStringWithTableRows(arrayIntoRows(arrayOfObj));
     };
     fileReader.readAsText(file);
